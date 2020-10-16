@@ -1,6 +1,6 @@
 .section .data
 output:
-	.asciz "The processor Vendor ID is '%s'\n"
+	.asciz "The processor Vendor ID is '%s' and today is %f\n"
 .section .bss
 	.lcomm buffer,12
 .section .text
