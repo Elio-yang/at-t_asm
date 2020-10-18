@@ -1,4 +1,4 @@
-#bubble_sort program
+#bubble_sort program in assembly code
 .section .data
 value:
 	.int 105,235,61,315,134,221,53,145,117,5
