@@ -1,0 +1,67 @@
+
+jump_test：     文件格式 elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000400078 <_start>:
+  400078:	90                   	nop
+  400079:	b8 01 00 00 00       	mov    $0x1,%eax
+  40007e:	eb 07                	jmp    400087 <overhere>
+  400080:	bb 0a 00 00 00       	mov    $0xa,%ebx
+  400085:	cd 80                	int    $0x80
+
+0000000000400087 <overhere>:
+  400087:	bb 14 00 00 00       	mov    $0x14,%ebx
+  40008c:	cd 80                	int    $0x80
+
+Disassembly of section .stab:
+
+0000000000000000 <.stab>:
+   0:	01 00                	add    %eax,(%rax)
+   2:	00 00                	add    %al,(%rax)
+   4:	00 00                	add    %al,(%rax)
+   6:	08 00                	or     %al,(%rax)
+   8:	0d 00 00 00 01       	or     $0x1000000,%eax
+   d:	00 00                	add    %al,(%rax)
+   f:	00 64 00 00          	add    %ah,0x0(%rax,%rax,1)
+  13:	00 78 00             	add    %bh,0x0(%rax)
+  16:	40 00 00             	add    %al,(%rax)
+  19:	00 00                	add    %al,(%rax)
+  1b:	00 44 00 04          	add    %al,0x4(%rax,%rax,1)
+  1f:	00 78 00             	add    %bh,0x0(%rax)
+  22:	40 00 00             	add    %al,(%rax)
+  25:	00 00                	add    %al,(%rax)
+  27:	00 44 00 05          	add    %al,0x5(%rax,%rax,1)
+  2b:	00 79 00             	add    %bh,0x0(%rcx)
+  2e:	40 00 00             	add    %al,(%rax)
+  31:	00 00                	add    %al,(%rax)
+  33:	00 44 00 06          	add    %al,0x6(%rax,%rax,1)
+  37:	00 7e 00             	add    %bh,0x0(%rsi)
+  3a:	40 00 00             	add    %al,(%rax)
+  3d:	00 00                	add    %al,(%rax)
+  3f:	00 44 00 07          	add    %al,0x7(%rax,%rax,1)
+  43:	00 80 00 40 00 00    	add    %al,0x4000(%rax)
+  49:	00 00                	add    %al,(%rax)
+  4b:	00 44 00 08          	add    %al,0x8(%rax,%rax,1)
+  4f:	00 85 00 40 00 00    	add    %al,0x4000(%rbp)
+  55:	00 00                	add    %al,(%rax)
+  57:	00 44 00 0a          	add    %al,0xa(%rax,%rax,1)
+  5b:	00 87 00 40 00 00    	add    %al,0x4000(%rdi)
+  61:	00 00                	add    %al,(%rax)
+  63:	00 44 00 0b          	add    %al,0xb(%rax,%rax,1)
+  67:	00                   	.byte 0x0
+  68:	8c 00                	mov    %es,(%rax)
+  6a:	40                   	rex
+	...
+
+Disassembly of section .stabstr:
+
+0000000000000000 <.stabstr>:
+   0:	00 6a 75             	add    %ch,0x75(%rdx)
+   3:	6d                   	insl   (%dx),%es:(%rdi)
+   4:	70 5f                	jo     65 <_start-0x400013>
+   6:	74 65                	je     6d <_start-0x40000b>
+   8:	73 74                	jae    7e <_start-0x3ffffa>
+   a:	2e 53                	cs push %rbx
+	...
